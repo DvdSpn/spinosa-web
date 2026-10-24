@@ -1,0 +1,108 @@
+{
+  "nome": "Ribalta Pizzeria e Bistrot",
+  "iniziale": "R",
+  "citta": "Firenze",
+  "zona": "Firenze · Rifredi",
+  "sottotitolo": "Pizzeria e bistrot a Rifredi: pizza, cucina di pesce e dolci fatti in casa. Aperti tutte le sere tranne il lunedì.",
+  "indirizzo": "Via Dino del Garbo 7R, 50134 Firenze",
+  "telefono": "331 422 8144",
+  "orari": {
+    "0": [],
+    "1": [
+      [
+        "19:00",
+        "22:30"
+      ]
+    ],
+    "2": [
+      [
+        "19:00",
+        "22:30"
+      ]
+    ],
+    "3": [
+      [
+        "19:00",
+        "22:30"
+      ]
+    ],
+    "4": [
+      [
+        "19:00",
+        "22:30"
+      ]
+    ],
+    "5": [
+      [
+        "19:00",
+        "22:30"
+      ]
+    ],
+    "6": [
+      [
+        "19:00",
+        "22:30"
+      ]
+    ]
+  },
+  "colori": {
+    "carta": "#f8f3f1",
+    "inchiostro": "#24161a",
+    "primario": "#5c1a2b",
+    "su_primario": "#fbf0ee",
+    "accento": "#e8b94a",
+    "linea": "#e5d7d5",
+    "tenue": "#6c5a5d"
+  },
+  "titolo_menu": "I piatti più amati",
+  "menu": [
+    {
+      "nome": "Pizzeria",
+      "piatti": [
+        {
+          "nome": "Pizze classiche e speciali"
+        }
+      ]
+    },
+    {
+      "nome": "Bistrot",
+      "piatti": [
+        {
+          "nome": "Tartare di tonno"
+        },
+        {
+          "nome": "Risotto"
+        },
+        {
+          "nome": "Hamburger"
+        }
+      ]
+    },
+    {
+      "nome": "Dolci",
+      "piatti": [
+        {
+          "nome": "Tiramisù",
+          "descrizione": "Il dolce che i clienti consigliano di non saltare."
+        }
+      ]
+    }
+  ],
+  "recensioni": {
+    "voto": "4,6",
+    "numero": "411",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per Ribalta Pizzeria e Bistrot. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20Ribalta%20Pizzeria%20e%20Bistrot"
+  },
+  "note_menu": [
+    "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}

@@ -1,0 +1,127 @@
+{
+  "nome": "Acqua e Farina",
+  "iniziale": "A",
+  "citta": "Firenze",
+  "zona": "Firenze · Stazione di Rifredi",
+  "sottotitolo": "Pizzeria di quartiere accanto alla stazione di Rifredi: ordini al forno, ti chiamiamo quando la pizza è pronta.",
+  "indirizzo": "Via dello Steccuto 4r, 50141 Firenze",
+  "telefono": "377 259 6984",
+  "messaggio_whatsapp": "Ciao, vorrei ordinare delle pizze da Acqua e Farina",
+  "orari": {
+    "0": [
+      [
+        "11:30",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "1": [
+      [
+        "11:30",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "2": [
+      [
+        "11:30",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "3": [
+      [
+        "11:30",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "4": [
+      [
+        "11:30",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "5": [
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "6": [
+      [
+        "18:00",
+        "22:30"
+      ]
+    ]
+  },
+  "colori": {
+    "carta": "#f7f3ec",
+    "inchiostro": "#231c17",
+    "primario": "#3a2a20",
+    "su_primario": "#f8efe3",
+    "accento": "#f0a03c",
+    "linea": "#e2d8ca",
+    "tenue": "#6a5e53"
+  },
+  "titolo_menu": "Le pizze più amate",
+  "menu": [
+    {
+      "nome": "Pizze",
+      "piatti": [
+        {
+          "nome": "Pizza Yellow",
+          "descrizione": "Fiordilatte, pomodorini gialli, alici di Cetara e olive."
+        },
+        {
+          "nome": "Salsiccia e cipolla caramellata"
+        },
+        {
+          "nome": "Calzone",
+          "descrizione": "Cotto al momento."
+        }
+      ]
+    },
+    {
+      "nome": "Da bere",
+      "piatti": [
+        {
+          "nome": "Birre artigianali"
+        }
+      ]
+    }
+  ],
+  "recensioni": {
+    "voto": "4,8",
+    "numero": "450",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per Acqua e Farina. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20Acqua%20e%20Farina"
+  },
+  "note_menu": [
+    "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}

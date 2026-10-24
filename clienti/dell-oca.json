@@ -1,0 +1,140 @@
+{
+  "nome": "Antica Trattoria dell'Oca",
+  "iniziale": "O",
+  "citta": "Firenze",
+  "zona": "Firenze · Novoli",
+  "sottotitolo": "Trattoria toscana a Novoli: bistecca alla fiorentina, pasta fresca e piatti di stagione, a pranzo e a cena tutti i giorni.",
+  "indirizzo": "Via Francesco Baracca 18 r, 50127 Firenze",
+  "telefono": "055 286214",
+  "solo_telefono": true,
+  "orari": {
+    "0": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:00"
+      ]
+    ],
+    "1": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:00"
+      ]
+    ],
+    "2": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:00"
+      ]
+    ],
+    "3": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:00"
+      ]
+    ],
+    "4": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:00"
+      ]
+    ],
+    "5": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:00"
+      ]
+    ],
+    "6": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "19:00",
+        "23:00"
+      ]
+    ]
+  },
+  "colori": {
+    "carta": "#f4f5f0",
+    "inchiostro": "#16201f",
+    "primario": "#1d4d4f",
+    "su_primario": "#eef4f2",
+    "accento": "#e9b44c",
+    "linea": "#d6dcd6",
+    "tenue": "#566362"
+  },
+  "titolo_menu": "I piatti più amati",
+  "menu": [
+    {
+      "nome": "Antipasti e primi",
+      "piatti": [
+        {
+          "nome": "Paté d'anatra"
+        },
+        {
+          "nome": "Tagliatelle al tartufo"
+        },
+        {
+          "nome": "Pappardelle al cinghiale"
+        }
+      ]
+    },
+    {
+      "nome": "Secondi e contorni",
+      "piatti": [
+        {
+          "nome": "Bistecca alla fiorentina"
+        },
+        {
+          "nome": "Filetto di manzo alla chiantigiana",
+          "descrizione": "Con salsa al Chianti."
+        },
+        {
+          "nome": "Patate e zucchine alla griglia"
+        }
+      ]
+    }
+  ],
+  "recensioni": {
+    "voto": "4,8",
+    "numero": "1.351",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per Antica Trattoria dell'Oca. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20Antica%20Trattoria%20dell%27Oca"
+  },
+  "note_menu": [
+    "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}
