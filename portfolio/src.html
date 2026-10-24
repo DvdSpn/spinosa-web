@@ -1,0 +1,358 @@
+<title>Spinosa Web</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Spinosa Web: siti moderni per ristoranti e attività locali a Firenze. Ti preparo un'anteprima gratuita prima che tu paghi, online in 7 giorni.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: una colonna stretta e leggibile, telefoni come protagonisti; "pietra serena" fiorentina come neutro */
+:root {
+  --bg: #f4f5f2;         /* intonaco */
+  --surface: #ffffff;
+  --ink: #151b1f;
+  --stone: #56656d;      /* pietra serena */
+  --line: #d6dcda;
+  --accent: #2f55d4;     /* cobalto, usato poco */
+  --accent-soft: #e3e9fb;
+  --cta: #151b1f;
+  --cta-ink: #ffffff;
+  --ok: #1f8a4c;
+  --f-display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --wrap: 1080px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161a; --surface: #182026; --ink: #edf0ee; --stone: #9aa8ae; --line: #2a343b;
+    --accent: #8ea8ff; --accent-soft: #1d2747; --cta: #edf0ee; --cta-ink: #11161a; --ok: #4cc283;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161a; --surface: #182026; --ink: #edf0ee; --stone: #9aa8ae; --line: #2a343b;
+  --accent: #8ea8ff; --accent-soft: #1d2747; --cta: #edf0ee; --cta-ink: #11161a; --ok: #4cc283;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 17px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: var(--wrap); margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 6.4vw, 4.6rem); line-height: 1.02; font-weight: 800; }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.08; font-weight: 700; }
+h3 { font-size: 1.35rem; line-height: 1.2; font-weight: 700; }
+p { margin: 0; }
+.label {
+  font-family: var(--f-mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* Barra in alto */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
+.brand { font-family: var(--f-display); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.03em; text-decoration: none; }
+.brand span { color: var(--accent); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font: 600 1rem/1 var(--f-body); text-decoration: none;
+  padding: 15px 22px; border-radius: 999px; border: 1.5px solid var(--cta);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-main { background: var(--cta); color: var(--cta-ink); }
+.btn-main:hover { transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-ghost:hover { background: var(--surface); }
+.btn-sm { padding: 10px 16px; font-size: 0.92rem; }
+
+/* Hero */
+.hero { padding-block: clamp(48px, 9vw, 104px) clamp(40px, 7vw, 80px); }
+.hero .wrap { display: grid; gap: 28px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.lead { font-size: clamp(1.08rem, 2vw, 1.25rem); color: var(--stone); max-width: 36ch; }
+.lead strong { color: var(--ink); font-weight: 600; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 0; margin: 4px 0 0; list-style: none; }
+.facts li { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; color: var(--stone); }
+.facts li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); flex: none; }
+
+section { padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 10px; margin-bottom: clamp(28px, 4vw, 44px); max-width: 640px; }
+.sec-head p { color: var(--stone); }
+
+/* Lavori */
+.works { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.work {
+  display: grid; grid-template-columns: minmax(0, 180px) minmax(0, 1fr); gap: 24px; align-items: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px;
+}
+.phone {
+  width: 100%; max-width: 200px; aspect-ratio: 390 / 844; border-radius: 26px; overflow: hidden;
+  border: 6px solid var(--ink); background: var(--ink);
+  box-shadow: 0 18px 40px -22px rgba(0,0,0,.55);
+}
+.phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.work-body { display: grid; gap: 12px; min-width: 0; align-content: start; }
+.work-body p { color: var(--stone); font-size: 0.98rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.chips li {
+  font-size: 0.82rem; font-weight: 500; padding: 5px 10px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--ink);
+}
+.work-link { font-weight: 600; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+.work-link[aria-disabled="true"] { color: var(--stone); text-decoration: none; font-weight: 500; }
+@media (max-width: 520px) {
+  .work { grid-template-columns: 1fr; justify-items: start; }
+  .phone { max-width: 230px; }
+}
+@media (min-width: 900px) {
+  .works { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .work { grid-template-columns: 1fr; }
+  .phone { max-width: 210px; }
+}
+.label-demo { color: var(--accent); }
+
+/* Cosa include */
+.incl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 0 32px; padding: 0; margin: 0; list-style: none; }
+.incl li { display: grid; gap: 4px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+.incl strong { font-weight: 600; }
+.incl span { color: var(--stone); font-size: 0.96rem; }
+
+/* Come funziona: una sequenza vera, quindi numerata */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; gap: 8px; align-content: start; padding: 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.steps li::before {
+  content: counter(step); font-family: var(--f-display); font-weight: 800; font-size: 1.1rem;
+  width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--bg);
+}
+.steps p { color: var(--stone); font-size: 0.97rem; }
+.steps .free { color: var(--ok); font-weight: 600; }
+
+/* Chi sono */
+.about { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 4vw, 40px); align-items: center; }
+.portrait {
+  width: clamp(120px, 20vw, 180px); aspect-ratio: 1; border-radius: 50%; overflow: hidden;
+  background: var(--accent-soft); display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 800; font-size: clamp(2.4rem, 5vw, 3.4rem); color: var(--accent);
+  border: 1px solid var(--line);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about-text { display: grid; gap: 14px; max-width: 60ch; }
+.about-text p { color: var(--stone); }
+.about-text p strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 560px) { .about { grid-template-columns: 1fr; } }
+
+/* Contatti */
+.contact { text-align: left; }
+.contact-box { display: grid; gap: 22px; padding: clamp(28px, 5vw, 48px); border-radius: 26px; background: var(--cta); color: var(--cta-ink); }
+.contact-box h2 { color: var(--cta-ink); }
+.contact-box p { color: color-mix(in srgb, var(--cta-ink) 72%, transparent); max-width: 46ch; }
+.contact-box .btn-main { background: var(--cta-ink); color: var(--cta); border-color: var(--cta-ink); justify-self: start; }
+.num { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.num output { font-family: var(--f-mono); font-size: 1.15rem; letter-spacing: 0.03em; user-select: all; font-variant-numeric: tabular-nums; }
+.copy {
+  font: 500 0.88rem var(--f-body); padding: 8px 14px; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--cta-ink); border: 1px solid color-mix(in srgb, var(--cta-ink) 40%, transparent);
+}
+
+footer { padding-block: 28px 40px; border-top: 1px solid var(--line); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: var(--stone); font-size: 0.9rem; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inizio">Spinosa<span>.</span>Web</a>
+    <a class="btn btn-main btn-sm wa" href="#contatti">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>
+      Scrivimi
+    </a>
+  </div>
+</header>
+
+<main id="inizio">
+  <div class="hero">
+    <div class="wrap">
+      <p class="label">Siti web per attività locali · Firenze e Toscana</p>
+      <h1>Il sito della tua attività. <em>Lo vedi prima di pagarlo.</em></h1>
+      <p class="lead">Ti preparo un'anteprima gratuita con il tuo nome, le tue foto e le tue recensioni. Se ti piace, <strong>è online in 7 giorni</strong>, sul tuo dominio.</p>
+      <div class="cta-row">
+        <a class="btn btn-main wa" href="#contatti">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>
+          Chiedi la tua anteprima
+        </a>
+        <a class="btn btn-ghost" href="#lavori">Guarda i lavori</a>
+      </div>
+      <ul class="facts">
+        <li>Anteprima gratuita</li>
+        <li>Pensato per il telefono</li>
+        <li>Modifiche veloci su WhatsApp</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="lavori">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Lavori recenti</p>
+        <h2>Ogni attività ha il suo stile</h2>
+        <p>Ogni sito parte da come lavora l'attività: un locale vuole far vedere il menu e ricevere ordini, un centro estetico vuole riempire l'agenda.</p>
+      </div>
+      <div class="works">
+        <article class="work">
+          <div class="phone"><img src="__BURGER__" alt="Il sito di Burger &amp; Grill visto da telefono: titolo grande, orari di apertura e menu" width="540" height="1169" loading="lazy"></div>
+          <div class="work-body">
+            <p class="label">Ristorante · Camucia (AR)</p>
+            <h3>Burger &amp; Grill</h3>
+            <p>Hamburger di Chianina e griglia. Il sito mostra il menu con i prezzi e gli allergeni e raccoglie gli ordini da asporto direttamente su WhatsApp.</p>
+            <ul class="chips">
+              <li>Menu con allergeni</li>
+              <li>Ordini su WhatsApp</li>
+              <li>Aperto / chiuso in tempo reale</li>
+              <li>Italiano e inglese</li>
+              <li>Recensioni Google</li>
+            </ul>
+            <a class="work-link" href="https://sito-burger.2006spinosadavide.workers.dev/" target="_blank" rel="noopener">Apri il sito</a>
+          </div>
+        </article>
+        <article class="work">
+          <div class="phone"><img src="__EMIBI__" alt="Il sito di Emibi Beauté visto da telefono: logo, slogan e pulsante per scrivere su WhatsApp" width="540" height="1169" loading="lazy"></div>
+          <div class="work-body">
+            <p class="label">Centro estetico · Camucia (AR)</p>
+            <h3>Emibi Beauté</h3>
+            <p>Nail art ed estetica. Toni caldi ed eleganti come il salone, con l'elenco dei trattamenti e un pulsante sempre a portata di mano per prenotare su WhatsApp.</p>
+            <ul class="chips">
+              <li>Listino trattamenti</li>
+              <li>Prenotazione su WhatsApp</li>
+              <li>Collegamento Instagram</li>
+            </ul>
+            <span class="work-link" aria-disabled="true">Online a breve</span>
+          </div>
+        </article>
+        <article class="work">
+          <div class="phone"><img src="__DEMO__" alt="La demo Trattoria da Lia vista da telefono: nome grande, pulsante Prenota su WhatsApp e lavagna dei piatti del giorno" width="540" height="1169" loading="lazy"></div>
+          <div class="work-body">
+            <p class="label label-demo">Esempio · Trattoria a Firenze</p>
+            <h3>Trattoria da Lia</h3>
+            <p>Un sito di esempio per farti vedere il modello per ristoranti. La trattoria non esiste, ma tutto il resto funziona: prova i pulsanti dal telefono.</p>
+            <ul class="chips">
+              <li>Piatti del giorno</li>
+              <li>Menu con prezzi</li>
+              <li>Prenota, chiama, mappa sempre in basso</li>
+              <li>Aperto / chiuso in tempo reale</li>
+            </ul>
+            <a class="work-link" href="https://spinosa-web.2006spinosadavide.workers.dev/demo/trattoria/" target="_blank" rel="noopener">Apri la demo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cosa-include">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Cosa c'è nel tuo sito</p>
+        <h2>Tutto quello che un cliente cerca, in una pagina</h2>
+        <p>Chi ti cerca su Google vuole sapere tre cose in pochi secondi: cosa offri, quando sei aperto e come contattarti.</p>
+      </div>
+      <ul class="incl">
+        <li><strong>Menu o listino servizi</strong><span>Leggibile da telefono, facile da aggiornare.</span></li>
+        <li><strong>Le tue foto migliori</strong><span>Piatti, locale, lavori: quello che ti fa scegliere.</span></li>
+        <li><strong>Recensioni</strong><span>Le migliori da Google, in evidenza.</span></li>
+        <li><strong>Orari e mappa</strong><span>Con le indicazioni stradali a un tocco.</span></li>
+        <li><strong>Chiama, WhatsApp, prenota</strong><span>Pulsanti sempre visibili, niente moduli lunghi.</span></li>
+        <li><strong>Il tuo dominio</strong><span>Un indirizzo come nomeattivita.it, intestato a te.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="come-funziona">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Come funziona</p>
+        <h2>Dal primo messaggio al sito online</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Anteprima</h3><p>Preparo una bozza del tuo sito con il materiale che hai già online. <span class="free">Gratis, senza impegno.</span></p></li>
+        <li><h3>Modifiche</h3><p>La guardi dal telefono e mi dici cosa cambiare: colori, foto, testi.</p></li>
+        <li><h3>Online</h3><p>In 7 giorni il sito è pubblicato sul tuo dominio e collegato alla tua scheda Google.</p></li>
+        <li><h3>Aggiornamenti</h3><p>Cambi orari, menu o prezzi? Mi scrivi e lo aggiorno io.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="chi-sono">
+    <div class="wrap about">
+      <div class="portrait" id="foto"><img src="__DAVIDE__" alt="Davide Spinosa" width="400" height="400"></div>
+      <div class="about-text">
+        <p class="label">Chi sono</p>
+        <h2>Ciao, sono Davide</h2>
+        <p>Faccio siti per attività locali in Toscana. Lavoro anche nel ristorante di famiglia, quindi <strong>so come funziona un locale</strong>: le telefonate per sapere se siete aperti, i clienti che chiedono il menu, il poco tempo per stare dietro a tutto.</p>
+        <p>Per questo faccio siti semplici e veloci, che rispondono da soli alle domande dei clienti.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contatti" class="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Vuoi vedere il tuo sito?</h2>
+        <p>Scrivimi il nome della tua attività: ti mando l'anteprima su WhatsApp, di solito entro 48 ore.</p>
+        <a class="btn btn-main" href="https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20Spinosa%20Web%20e%20vorrei%20un%27anteprima%20per%20la%20mia%20attivit%C3%A0%3A%20" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>
+          Scrivimi su WhatsApp
+        </a>
+        <div class="num">
+          <output id="numero">366 826 3645</output>
+          <button class="copy" type="button" id="copia">Copia numero</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Spinosa Web · Davide Spinosa</span>
+    <span>Firenze · Toscana</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copia');
+    var out = document.getElementById('numero');
+    btn.addEventListener('click', function () {
+      var done = function () { btn.textContent = 'Copiato'; setTimeout(function () { btn.textContent = 'Copia numero'; }, 1800); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(out);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selezionato: copia a mano';
+      };
+      try {
+        navigator.clipboard.writeText('+39 366 826 3645').then(done, fallback);
+      } catch (e) { fallback(); }
+    });
+  })();
+</script>

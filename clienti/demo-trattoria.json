@@ -1,0 +1,70 @@
+{
+  "nome": "Trattoria da Lia",
+  "citta": "Firenze",
+  "zona": "Firenze · Sant'Ambrogio",
+  "sottotitolo": "Cucina fiorentina di casa: paste fatte a mano, bistecca alla brace e la ribollita della nonna.",
+  "indirizzo": "Borgo la Croce 24, 50121 Firenze",
+  "telefono": "366 826 3645",
+  "messaggio_whatsapp": "Ciao Davide, ho visto la demo della Trattoria da Lia e vorrei un sito così per la mia attività",
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/",
+  "demo": {
+    "testo": "Sito di esempio realizzato da Spinosa Web: la trattoria non esiste.",
+    "azione": "Vuoi un sito così? Scrivimi",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20la%20demo%20della%20trattoria%20e%20vorrei%20un%20sito%20cos%C3%AC"
+  },
+  "colori": {
+    "carta": "#f6f4ee",
+    "inchiostro": "#1d211c",
+    "primario": "#1f3a2e",
+    "su_primario": "#f3f1e8",
+    "accento": "#e0a43a",
+    "linea": "#dcd7ca",
+    "tenue": "#5c6258"
+  },
+  "orari": {
+    "0": [],
+    "1": [["12:00", "14:30"], ["19:00", "22:30"]],
+    "2": [["12:00", "14:30"], ["19:00", "22:30"]],
+    "3": [["12:00", "14:30"], ["19:00", "22:30"]],
+    "4": [["12:00", "14:30"], ["19:00", "23:00"]],
+    "5": [["12:00", "15:00"], ["19:00", "23:00"]],
+    "6": [["12:00", "15:00"]]
+  },
+  "piatti_del_giorno": [
+    {"nome": "Lampredotto in zimino", "prezzo": 12},
+    {"nome": "Fagioli all'uccelletto", "prezzo": 6},
+    {"nome": "Torta della nonna", "prezzo": 6}
+  ],
+  "nota_lavagna": "Finché ce n'è.",
+  "menu": [
+    {"nome": "Antipasti", "piatti": [
+      {"nome": "Crostini neri", "descrizione": "Fegatini di pollo, capperi e vin santo su pane sciocco.", "prezzo": 7},
+      {"nome": "Tagliere toscano", "descrizione": "Finocchiona, prosciutto, pecorino e coccoli fritti.", "prezzo": 14},
+      {"nome": "Fettunta", "descrizione": "Pane abbrustolito, aglio e olio nuovo.", "prezzo": 5, "etichette": ["Vegano"]}
+    ]},
+    {"nome": "Primi", "piatti": [
+      {"nome": "Pappa al pomodoro", "descrizione": "Pane, pomodoro, basilico e olio extravergine.", "prezzo": 10, "etichette": ["Vegano"]},
+      {"nome": "Pappardelle al cinghiale", "descrizione": "Pasta all'uovo tirata a mano, ragù cotto 6 ore.", "prezzo": 14},
+      {"nome": "Ribollita", "descrizione": "Cavolo nero, fagioli e pane raffermo, ripassata in padella.", "prezzo": 10, "etichette": ["Vegetariano"]}
+    ]},
+    {"nome": "Secondi", "piatti": [
+      {"nome": "Bistecca alla fiorentina", "descrizione": "Chianina alla brace, minimo 1 kg. Prezzo al chilo.", "prezzo": "55 €/kg"},
+      {"nome": "Peposo dell'Impruneta", "descrizione": "Manzo cotto nel Chianti con pepe nero, polenta.", "prezzo": 16},
+      {"nome": "Trippa alla fiorentina", "descrizione": "Al pomodoro, con parmigiano.", "prezzo": 13}
+    ]},
+    {"nome": "Dolci", "piatti": [
+      {"nome": "Cantucci e vin santo", "prezzo": 7},
+      {"nome": "Schiacciata alla fiorentina", "descrizione": "Con panna montata.", "prezzo": 6, "etichette": ["Vegetariano"]}
+    ]}
+  ],
+  "note_menu": ["Coperto 2,50 €", "Chiedi al personale per allergeni e intolleranze", "Pane senza glutine su richiesta"],
+  "recensioni": {
+    "elenco": [
+      {"stelle": 5, "testo": "Pappardelle al cinghiale come le faceva mia nonna. Personale gentilissimo, torneremo.", "autore": "Recensione di esempio"},
+      {"stelle": 5, "testo": "Bistecca perfetta e prezzi onesti per il centro di Firenze. Consigliato prenotare il sabato.", "autore": "Recensione di esempio"},
+      {"stelle": 4, "testo": "Ambiente semplice e accogliente, ribollita buonissima. Un po' di attesa, ma ne vale la pena.", "autore": "Recensione di esempio"}
+    ],
+    "avviso": "Nei siti veri qui compaiono le recensioni Google reali dell'attività.",
+    "link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+  }
+}
