@@ -1,0 +1,130 @@
+{
+  "nome": "L'Angolo del Gusto",
+  "iniziale": "A",
+  "citta": "Firenze",
+  "zona": "Firenze · Rifredi",
+  "sottotitolo": "Pizzeria e cucina toscana a Rifredi: pizza, pasta fatta in casa e bistecca di Chianina, a pranzo e a cena.",
+  "indirizzo": "Via Taddeo Alderotti 37, 50139 Firenze",
+  "telefono": "342 837 8329",
+  "orari": {
+    "0": [
+      [
+        "11:30",
+        "14:30"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "1": [
+      [
+        "11:30",
+        "14:30"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "2": [
+      [
+        "11:30",
+        "14:30"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "3": [
+      [
+        "11:30",
+        "14:30"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "4": [
+      [
+        "11:30",
+        "14:30"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "5": [
+      [
+        "11:30",
+        "14:30"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "6": []
+  },
+  "colori": {
+    "carta": "#f7f2ea",
+    "inchiostro": "#241a16",
+    "primario": "#7a2418",
+    "su_primario": "#fbf3e6",
+    "accento": "#f2b544",
+    "linea": "#e3d8c8",
+    "tenue": "#6a5d52"
+  },
+  "titolo_menu": "I piatti più amati",
+  "menu": [
+    {
+      "nome": "Dalla cucina",
+      "piatti": [
+        {
+          "nome": "Tagliere per due",
+          "descrizione": "Salumi e formaggi toscani da dividere."
+        },
+        {
+          "nome": "Gnocchi fatti in casa"
+        },
+        {
+          "nome": "Bistecca alla fiorentina",
+          "descrizione": "Chianina alla griglia."
+        }
+      ]
+    },
+    {
+      "nome": "Pizzeria",
+      "piatti": [
+        {
+          "nome": "La pizza della casa",
+          "descrizione": "Quella che porta il nome del locale."
+        },
+        {
+          "nome": "Pizze classiche e speciali",
+          "descrizione": "A pranzo e a cena."
+        }
+      ]
+    }
+  ],
+  "recensioni": {
+    "voto": "4,7",
+    "numero": "2.584",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per L'Angolo del Gusto. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20L%27Angolo%20del%20Gusto"
+  },
+  "note_menu": [
+    "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}

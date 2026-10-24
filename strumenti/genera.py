@@ -7,6 +7,11 @@ Uso:
 Il file JSON contiene tutto quello che cambia da cliente a cliente: nome, contatti,
 orari, menu, recensioni, foto e colori. Il risultato e' una cartella con index.html
 (e le foto, se ci sono) pronta da pubblicare.
+
+Campi facoltativi utili per le anteprime:
+- "prezzo" di un piatto: se manca, il piatto compare senza prezzo.
+- "solo_telefono": true quando il locale ha solo un numero fisso; il pulsante
+  principale diventa "Chiama per prenotare" e sparisce WhatsApp.
 """
 import html, json, os, shutil, sys, urllib.parse
 
@@ -18,6 +23,7 @@ ICONE = {
     "wa": '<path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/>',
     "map": '<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
     "star": '<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/>',
+    "menu": '<path d="M5 6h14M5 12h14M5 18h10"/>',
 }
 def icona(n, cls="ico"):
     return (f'<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
@@ -38,7 +44,7 @@ def riassunto_orari(orari):
     if pranzo and cena: parti.append("Pranzo e cena")
     elif pranzo: parti.append("Solo pranzo")
     elif cena: parti.append("Solo cena")
-    if len(chiusi) == 1: parti.append(f"chiuso il {chiusi[0].lower()}")
+    if len(chiusi) == 1: parti.append(("chiuso la " if chiusi[0] == "Domenica" else "chiuso il ") + chiusi[0].lower())
     elif chiusi: parti.append("chiuso " + ", ".join(c.lower() for c in chiusi))
     return " · ".join(parti)
 
@@ -58,6 +64,22 @@ def genera(d, out):
     maps_link = "https://www.google.com/maps/search/?api=1&query=" + urllib.parse.quote(f"{d['nome']} {d['indirizzo']}")
     if d.get("maps_link"): maps_link = d["maps_link"]
     demo = d.get("demo")
+    solo_tel = bool(d.get("solo_telefono"))
+
+    # Pulsanti: WhatsApp quando c'e' un cellulare, altrimenti la chiamata
+    if solo_tel:
+        azioni_hero = (f'<a class="btn btn-acc" href="{E(tel_link)}">{icona("tel")}Chiama per prenotare</a>'
+                       f'<a class="btn btn-bordo" href="#menu">Vedi il menu</a>')
+        barra_html = (f'<a href="#menu">{icona("menu")}Menu</a>'
+                      f'<a class="princ" href="{E(tel_link)}">{icona("tel")}Prenota</a>'
+                      f'<a href="{E(maps_link)}" target="_blank" rel="noopener">{icona("map")}Mappa</a>')
+    else:
+        azioni_hero = (f'<a class="btn btn-acc" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}Prenota su WhatsApp</a>'
+                       f'<a class="btn btn-bordo" href="{E(tel_link)}">{icona("tel")}Chiama</a>'
+                       f'<a class="btn btn-bordo" href="#menu">Vedi il menu</a>')
+        barra_html = (f'<a href="{E(tel_link)}">{icona("tel")}Chiama</a>'
+                      f'<a class="princ" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}Prenota</a>'
+                      f'<a href="{E(maps_link)}" target="_blank" rel="noopener">{icona("map")}Mappa</a>')
 
     # Lavagna dei piatti del giorno
     lavagna = ""
@@ -81,10 +103,13 @@ def genera(d, out):
         for v in s["piatti"]:
             desc = f'<p class="desc">{E(v["descrizione"])}</p>' if v.get("descrizione") else ""
             tag = "".join(f'<span class="tag">{E(t)}</span>' for t in v.get("etichette", []))
-            voci.append(f'<li class="piatto"><div class="riga"><h4>{E(v["nome"])}</h4><span class="punti" aria-hidden="true"></span>'
-                        f'<span class="prezzo">{E(euro(v["prezzo"]))}</span></div>{desc}{tag and f"<div class=tags>{tag}</div>"}</li>')
+            prezzo = (f'<span class="punti" aria-hidden="true"></span><span class="prezzo">{E(euro(v["prezzo"]))}</span>'
+                      if v.get("prezzo") is not None else "")
+            voci.append(f'<li class="piatto"><div class="riga"><h4>{E(v["nome"])}</h4>{prezzo}</div>'
+                        f'{desc}{tag and f"<div class=tags>{tag}</div>"}</li>')
         sezioni.append(f'<div class="portata"><h3>{E(s["nome"])}</h3><ul>{"".join(voci)}</ul></div>')
     note_menu = " · ".join(E(n) for n in d.get("note_menu", []))
+    titolo_menu = d.get("titolo_menu", "Il menu")
 
     # Foto
     galleria = ""
@@ -102,17 +127,18 @@ def genera(d, out):
     if r:
         carte = "".join(
             f'<figure class="rec"><div class="stelle" aria-label="{q.get("stelle",5)} stelle su 5">{icona("star","st") * int(q.get("stelle",5))}</div>'
-            f'<blockquote>{E(q["testo"])}</blockquote><figcaption>{E(q["autore"])}</figcaption></figure>' for q in r["elenco"])
+            f'<blockquote>{E(q["testo"])}</blockquote><figcaption>{E(q["autore"])}</figcaption></figure>' for q in r.get("elenco", []))
         sintesi = ""
         if r.get("voto"):
             sintesi = f'<p class="voto"><strong>{E(r["voto"])}</strong> su Google · {E(r["numero"])} recensioni</p>'
         avviso = f'<p class="avviso-demo">{E(r["avviso"])}</p>' if r.get("avviso") else ""
+        griglia = f'<div class="recs">{carte}</div>' if carte else ""
         recensioni = f'''
   <section id="recensioni" aria-labelledby="t-rec">
     <div class="wrap">
       <h2 id="t-rec" class="tit">Cosa dicono di noi</h2>
       {sintesi}
-      <div class="recs">{carte}</div>
+      {griglia}
       {avviso}
       <a class="link" href="{E(r.get("link", maps_link))}" target="_blank" rel="noopener">Leggi tutte le recensioni su Google</a>
     </div>
@@ -130,6 +156,7 @@ def genera(d, out):
                       f'<a href="{E(demo["link"])}" target="_blank" rel="noopener">{E(demo["azione"])}</a></div></div>')
     robots = '<meta name="robots" content="noindex, nofollow">' if (demo or d.get("anteprima")) else '<meta name="robots" content="index, follow">'
     descrizione_meta = d.get("descrizione_meta", f'{d["nome"]} a {d["citta"]}: {d["sottotitolo"]}. Menu, orari e prenotazioni.')
+    iniziale = d.get("iniziale", d["nome"].split()[-1][0])
 
     pagina = f'''<!doctype html>
 <html lang="it">
@@ -143,7 +170,7 @@ def genera(d, out):
 <meta name="theme-color" content="{col["primario"]}">
 <meta property="og:title" content="{E(d["nome"])}">
 <meta property="og:description" content="{E(d["sottotitolo"])}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='{urllib.parse.quote(col["primario"])}'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='{urllib.parse.quote(col["accento"])}'%3E{E(d["nome"].split()[-1][0])}%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='{urllib.parse.quote(col["primario"])}'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='{urllib.parse.quote(col["accento"])}'%3E{E(iniziale)}%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Albert+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
@@ -175,7 +202,7 @@ p {{ margin: 0; }}
 
 .testata {{ background: var(--primario); color: var(--su-primario); }}
 .testata .wrap {{ display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }}
-.marchio {{ font: 400 1.15rem/1 var(--f-titoli); text-decoration: none; white-space: nowrap; }}
+.marchio {{ font: 400 1.15rem/1 var(--f-titoli); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }}
 .stato {{ white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--su-primario) 30%, transparent); }}
 .stato::before {{ content: ""; width: 8px; height: 8px; border-radius: 50%; background: #9aa39a; }}
 .stato.aperto::before {{ background: #5fd38a; box-shadow: 0 0 0 3px rgba(95,211,138,.25); }}
@@ -184,7 +211,7 @@ p {{ margin: 0; }}
 .hero {{ background: var(--primario); color: var(--su-primario); padding-block: clamp(40px, 9vw, 96px) clamp(48px, 9vw, 104px); }}
 .hero .wrap {{ display: grid; gap: 20px; }}
 .zona {{ font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accento); }}
-.hero h1 {{ font: 400 clamp(3rem, 12vw, 6.4rem)/0.95 var(--f-titoli); letter-spacing: -0.01em; }}
+.hero h1 {{ font: 400 clamp(2.6rem, 11vw, 6.4rem)/0.95 var(--f-titoli); letter-spacing: -0.01em; }}
 .hero .sotto {{ font-size: clamp(1.1rem, 2.4vw, 1.3rem); max-width: 34ch; opacity: 0.9; }}
 .azioni {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }}
 .btn {{ display: inline-flex; align-items: center; gap: 9px; padding: 14px 20px; border-radius: 999px; font: 600 1rem/1 var(--f-testo); text-decoration: none; border: 1.5px solid transparent; }}
@@ -274,18 +301,14 @@ footer .firma a {{ color: var(--carta); }}
       <p class="zona">{E(d["zona"])}</p>
       <h1>{E(d["nome"])}</h1>
       <p class="sotto">{E(d["sottotitolo"])}</p>
-      <div class="azioni">
-        <a class="btn btn-acc" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}Prenota su WhatsApp</a>
-        <a class="btn btn-bordo" href="{E(tel_link)}">{icona("tel")}Chiama</a>
-        <a class="btn btn-bordo" href="#menu">Vedi il menu</a>
-      </div>
+      <div class="azioni">{azioni_hero}</div>
       <p class="info-rapida">{E(riassunto_orari(orari))} · {E(d["indirizzo"])}</p>
     </div>
   </div>
 {lavagna}
   <section id="menu" aria-labelledby="t-menu">
     <div class="wrap">
-      <h2 id="t-menu" class="tit">Il menu</h2>
+      <h2 id="t-menu" class="tit">{E(titolo_menu)}</h2>
       <div class="menu-grid">{"".join(sezioni)}</div>
       <p class="note-menu">{note_menu}</p>
     </div>
@@ -317,11 +340,7 @@ footer .firma a {{ color: var(--carta); }}
     <span class="firma">Sito realizzato da <a href="{E(d.get("credito_link", "https://spinosa-web.2006spinosadavide.workers.dev/"))}" target="_blank" rel="noopener">Spinosa Web</a></span>
   </div>
 </footer>
-<nav class="barra" aria-label="Azioni rapide">
-  <a href="{E(tel_link)}">{icona("tel")}Chiama</a>
-  <a class="princ" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}Prenota</a>
-  <a href="{E(maps_link)}" target="_blank" rel="noopener">{icona("map")}Mappa</a>
-</nav>
+<nav class="barra" aria-label="Azioni rapide">{barra_html}</nav>
 <script>
 (function () {{
   var ORARI = {json.dumps(orari)};

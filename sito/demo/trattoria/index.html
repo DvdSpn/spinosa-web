@@ -42,7 +42,7 @@ p { margin: 0; }
 
 .testata { background: var(--primario); color: var(--su-primario); }
 .testata .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }
-.marchio { font: 400 1.15rem/1 var(--f-titoli); text-decoration: none; white-space: nowrap; }
+.marchio { font: 400 1.15rem/1 var(--f-titoli); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .stato { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--su-primario) 30%, transparent); }
 .stato::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #9aa39a; }
 .stato.aperto::before { background: #5fd38a; box-shadow: 0 0 0 3px rgba(95,211,138,.25); }
@@ -51,7 +51,7 @@ p { margin: 0; }
 .hero { background: var(--primario); color: var(--su-primario); padding-block: clamp(40px, 9vw, 96px) clamp(48px, 9vw, 104px); }
 .hero .wrap { display: grid; gap: 20px; }
 .zona { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accento); }
-.hero h1 { font: 400 clamp(3rem, 12vw, 6.4rem)/0.95 var(--f-titoli); letter-spacing: -0.01em; }
+.hero h1 { font: 400 clamp(2.6rem, 11vw, 6.4rem)/0.95 var(--f-titoli); letter-spacing: -0.01em; }
 .hero .sotto { font-size: clamp(1.1rem, 2.4vw, 1.3rem); max-width: 34ch; opacity: 0.9; }
 .azioni { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 .btn { display: inline-flex; align-items: center; gap: 9px; padding: 14px 20px; border-radius: 999px; font: 600 1rem/1 var(--f-testo); text-decoration: none; border: 1.5px solid transparent; }
@@ -141,11 +141,7 @@ footer .firma a { color: var(--carta); }
       <p class="zona">Firenze · Sant&#x27;Ambrogio</p>
       <h1>Trattoria da Lia</h1>
       <p class="sotto">Cucina fiorentina di casa: paste fatte a mano, bistecca alla brace e la ribollita della nonna.</p>
-      <div class="azioni">
-        <a class="btn btn-acc" href="https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20la%20demo%20della%20Trattoria%20da%20Lia%20e%20vorrei%20un%20sito%20cos%C3%AC%20per%20la%20mia%20attivit%C3%A0" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>Prenota su WhatsApp</a>
-        <a class="btn btn-bordo" href="tel:+393668263645"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Chiama</a>
-        <a class="btn btn-bordo" href="#menu">Vedi il menu</a>
-      </div>
+      <div class="azioni"><a class="btn btn-acc" href="https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20la%20demo%20della%20Trattoria%20da%20Lia%20e%20vorrei%20un%20sito%20cos%C3%AC%20per%20la%20mia%20attivit%C3%A0" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>Prenota su WhatsApp</a><a class="btn btn-bordo" href="tel:+393668263645"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Chiama</a><a class="btn btn-bordo" href="#menu">Vedi il menu</a></div>
       <p class="info-rapida">Pranzo e cena · chiuso il lunedì · Borgo la Croce 24, 50121 Firenze</p>
     </div>
   </div>
@@ -202,11 +198,7 @@ footer .firma a { color: var(--carta); }
     <span class="firma">Sito realizzato da <a href="https://spinosa-web.2006spinosadavide.workers.dev/" target="_blank" rel="noopener">Spinosa Web</a></span>
   </div>
 </footer>
-<nav class="barra" aria-label="Azioni rapide">
-  <a href="tel:+393668263645"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Chiama</a>
-  <a class="princ" href="https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20la%20demo%20della%20Trattoria%20da%20Lia%20e%20vorrei%20un%20sito%20cos%C3%AC%20per%20la%20mia%20attivit%C3%A0" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>Prenota</a>
-  <a href="https://www.google.com/maps/search/?api=1&amp;query=Trattoria%20da%20Lia%20Borgo%20la%20Croce%2024%2C%2050121%20Firenze" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Mappa</a>
-</nav>
+<nav class="barra" aria-label="Azioni rapide"><a href="tel:+393668263645"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Chiama</a><a class="princ" href="https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20la%20demo%20della%20Trattoria%20da%20Lia%20e%20vorrei%20un%20sito%20cos%C3%AC%20per%20la%20mia%20attivit%C3%A0" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4A8.4 8.4 0 1 1 20.5 11.6z"/></svg>Prenota</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Trattoria%20da%20Lia%20Borgo%20la%20Croce%2024%2C%2050121%20Firenze" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Mappa</a></nav>
 <script>
 (function () {
   var ORARI = {"0": [], "1": [["12:00", "14:30"], ["19:00", "22:30"]], "2": [["12:00", "14:30"], ["19:00", "22:30"]], "3": [["12:00", "14:30"], ["19:00", "22:30"]], "4": [["12:00", "14:30"], ["19:00", "23:00"]], "5": [["12:00", "15:00"], ["19:00", "23:00"]], "6": [["12:00", "15:00"]]};

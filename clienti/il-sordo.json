@@ -1,0 +1,124 @@
+{
+  "nome": "Osteria Il Sordo",
+  "iniziale": "S",
+  "citta": "Firenze",
+  "zona": "Firenze · Campo di Marte",
+  "sottotitolo": "Piccola osteria di famiglia: lui in cucina, lei in sala, piatti toscani e di mare fatti al momento.",
+  "indirizzo": "Via Scipione Ammirato 24R, 50136 Firenze",
+  "telefono": "055 679131",
+  "solo_telefono": true,
+  "orari": {
+    "0": [
+      [
+        "12:30",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "1": [
+      [
+        "12:30",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "2": [
+      [
+        "12:30",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "3": [
+      [
+        "12:30",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "4": [
+      [
+        "12:30",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "5": [
+      [
+        "12:30",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "6": []
+  },
+  "colori": {
+    "carta": "#f5f3ec",
+    "inchiostro": "#1f2218",
+    "primario": "#3d4a2a",
+    "su_primario": "#f3f2e8",
+    "accento": "#e3a857",
+    "linea": "#dddac9",
+    "tenue": "#5f6252"
+  },
+  "titolo_menu": "I piatti più amati",
+  "menu": [
+    {
+      "nome": "Primi",
+      "piatti": [
+        {
+          "nome": "Gnocchi"
+        },
+        {
+          "nome": "Pasta al pesto"
+        },
+        {
+          "nome": "Spaghetti con gamberi e vongole"
+        }
+      ]
+    },
+    {
+      "nome": "Dolci",
+      "piatti": [
+        {
+          "nome": "Tiramisù"
+        }
+      ]
+    }
+  ],
+  "recensioni": {
+    "voto": "4,5",
+    "numero": "506",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per Osteria Il Sordo. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20Osteria%20Il%20Sordo"
+  },
+  "note_menu": [
+    "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}

@@ -1,0 +1,119 @@
+{
+  "nome": "Trattoria Annarè",
+  "iniziale": "A",
+  "citta": "Firenze",
+  "zona": "Firenze · Isolotto",
+  "sottotitolo": "Trattoria di pesce all'Isolotto: frittura, risotto ai frutti di mare e la parmigiana di mare.",
+  "indirizzo": "Via Baccio da Montelupo 18/20, 50142 Firenze",
+  "telefono": "331 572 5416",
+  "orari": {
+    "0": [
+      [
+        "12:00",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "1": [
+      [
+        "12:00",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "2": [
+      [
+        "12:00",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "3": [
+      [
+        "12:00",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "4": [
+      [
+        "12:00",
+        "14:30"
+      ],
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "5": [
+      [
+        "19:30",
+        "22:30"
+      ]
+    ],
+    "6": []
+  },
+  "colori": {
+    "carta": "#f3f6f6",
+    "inchiostro": "#10242e",
+    "primario": "#123a52",
+    "su_primario": "#eef5f7",
+    "accento": "#f2a65a",
+    "linea": "#d5dfe2",
+    "tenue": "#52646b"
+  },
+  "titolo_menu": "I piatti più amati",
+  "menu": [
+    {
+      "nome": "Antipasti",
+      "piatti": [
+        {
+          "nome": "Parmigiana di melanzane al pesce"
+        },
+        {
+          "nome": "Frittura di calamari"
+        }
+      ]
+    },
+    {
+      "nome": "Primi",
+      "piatti": [
+        {
+          "nome": "Risotto ai frutti di mare"
+        },
+        {
+          "nome": "Gnocchi al pomodoro e mozzarella"
+        }
+      ]
+    }
+  ],
+  "recensioni": {
+    "voto": "4,5",
+    "numero": "771",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per Trattoria Annarè. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20Trattoria%20Annar%C3%A8"
+  },
+  "note_menu": [
+    "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}

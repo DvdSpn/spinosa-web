@@ -1,0 +1,112 @@
+{
+  "nome": "Gastronomia il Giglio",
+  "iniziale": "G",
+  "citta": "Firenze",
+  "zona": "Firenze · San Frediano",
+  "sottotitolo": "Gastronomia e cucina toscana in via dell'Orto, nel cuore di San Frediano. Pranzo e cena, con il vino giusto.",
+  "indirizzo": "Via dell'Orto 24 rosso, 50124 Firenze",
+  "telefono": "338 245 1143",
+  "orari": {
+    "0": [],
+    "1": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "2": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "3": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "22:30"
+      ]
+    ],
+    "4": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "24:00"
+      ]
+    ],
+    "5": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "18:00",
+        "24:00"
+      ]
+    ],
+    "6": []
+  },
+  "colori": {
+    "carta": "#f8f3ec",
+    "inchiostro": "#231816",
+    "primario": "#8e1b22",
+    "su_primario": "#fbf1ea",
+    "accento": "#e9c46a",
+    "linea": "#e6d9cc",
+    "tenue": "#6b5a52"
+  },
+  "titolo_menu": "I piatti più amati",
+  "menu": [
+    {
+      "nome": "Antipasti",
+      "piatti": [
+        {
+          "nome": "Carpaccio di black angus"
+        }
+      ]
+    },
+    {
+      "nome": "Primi e secondi",
+      "piatti": [
+        {
+          "nome": "Tortellini fatti in casa"
+        },
+        {
+          "nome": "Manzo cotto a lungo",
+          "descrizione": "Tenerissimo, il piatto che i clienti ricordano di più."
+        }
+      ]
+    }
+  ],
+  "recensioni": {
+    "voto": "4,8",
+    "numero": "327",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per Gastronomia il Giglio. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20Gastronomia%20il%20Giglio"
+  },
+  "note_menu": [
+    "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}
