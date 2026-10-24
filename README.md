@@ -2,6 +2,15 @@
 
 Sito di Spinosa Web (Davide Spinosa): portfolio, demo e anteprime per i clienti, pubblicato su Cloudflare Workers.
 
+## Indirizzi online
+
+- Portfolio: https://spinosa-web.2006spinosadavide.workers.dev/
+- Demo trattoria: https://spinosa-web.2006spinosadavide.workers.dev/demo/trattoria/
+- Burger & Grill: https://sito-burger.2006spinosadavide.workers.dev/
+- Emibi Beauté: https://sito-emibi.2006spinosadavide.workers.dev/
+
+Ogni push su `main` ripubblica il sito su Cloudflare in automatico.
+
 ## Cartelle
 
 ```
