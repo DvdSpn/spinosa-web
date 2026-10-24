@@ -46,13 +46,13 @@
     ]
   },
   "colori": {
-    "carta": "#f8f3f1",
-    "inchiostro": "#24161a",
-    "primario": "#5c1a2b",
-    "su_primario": "#fbf0ee",
-    "accento": "#e8b94a",
-    "linea": "#e5d7d5",
-    "tenue": "#6c5a5d"
+    "carta": "#f6f5f1",
+    "inchiostro": "#1c1c1a",
+    "primario": "#232420",
+    "su_primario": "#f4f2ec",
+    "accento": "#d98b7f",
+    "linea": "#dedbd2",
+    "tenue": "#5f5e57"
   },
   "titolo_menu": "I piatti più amati",
   "menu": [
@@ -104,5 +104,6 @@
     "Anteprima: qui trovi alcuni dei piatti più citati nelle recensioni",
     "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
   ],
-  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/",
+  "logo": "ribalta-logo.png"
 }

@@ -43,7 +43,7 @@ p { margin: 0; }
 .testata { background: var(--primario); color: var(--su-primario); }
 .testata .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }
 .marchio { font: 400 1.15rem/1 var(--f-titoli); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.marchio .logo { height: 38px; width: auto; max-width: 160px; object-fit: contain; display: block; }
+.logo-hero { width: clamp(110px, 28vw, 150px); height: auto; aspect-ratio: auto; background: #fff; padding: 10px; border-radius: 16px; box-shadow: 0 10px 24px -14px rgba(0,0,0,.5); }
 .stato { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--su-primario) 30%, transparent); }
 .stato::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #9aa39a; }
 .stato.aperto::before { background: #5fd38a; box-shadow: 0 0 0 3px rgba(95,211,138,.25); }
@@ -139,6 +139,7 @@ footer .firma a { color: var(--carta); }
 <main>
   <div class="hero">
     <div class="wrap">
+      
       <p class="zona">Firenze · Novoli</p>
       <h1>Antica Trattoria dell&#x27;Oca</h1>
       <p class="sotto">Trattoria toscana a Novoli: bistecca alla fiorentina, pasta fresca e piatti di stagione, a pranzo e a cena tutti i giorni.</p>

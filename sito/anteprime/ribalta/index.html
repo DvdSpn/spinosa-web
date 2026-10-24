@@ -7,18 +7,18 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Ribalta Pizzeria e Bistrot a Firenze: Pizzeria e bistrot a Rifredi: pizza, cucina di pesce e dolci fatti in casa. Aperti tutte le sere tranne il lunedì.. Menu, orari e prenotazioni.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#5c1a2b">
+<meta name="theme-color" content="#232420">
 <meta property="og:title" content="Ribalta Pizzeria e Bistrot">
 <meta property="og:description" content="Pizzeria e bistrot a Rifredi: pizza, cucina di pesce e dolci fatti in casa. Aperti tutte le sere tranne il lunedì.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235c1a2b'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23e8b94a'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23232420'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='36' fill='%23d98b7f'%3ER%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Albert+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
 <style>
 /* Modello ristorante di Spinosa Web: una colonna, menu come carta stampata, azioni sempre a portata di pollice */
 :root {
-  --carta: #f8f3f1; --inchiostro: #24161a; --tenue: #6c5a5d; --linea: #e5d7d5;
-  --primario: #5c1a2b; --su-primario: #fbf0ee; --accento: #e8b94a;
+  --carta: #f6f5f1; --inchiostro: #1c1c1a; --tenue: #5f5e57; --linea: #dedbd2;
+  --primario: #232420; --su-primario: #f4f2ec; --accento: #d98b7f;
   --f-titoli: "Young Serif", Georgia, "Times New Roman", serif;
   --f-testo: "Albert Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mano: "Caveat", "Segoe Print", "Bradley Hand", cursive;
@@ -43,7 +43,7 @@ p { margin: 0; }
 .testata { background: var(--primario); color: var(--su-primario); }
 .testata .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }
 .marchio { font: 400 1.15rem/1 var(--f-titoli); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.marchio .logo { height: 38px; width: auto; max-width: 160px; object-fit: contain; display: block; }
+.logo-hero { width: clamp(110px, 28vw, 150px); height: auto; aspect-ratio: auto; background: #fff; padding: 10px; border-radius: 16px; box-shadow: 0 10px 24px -14px rgba(0,0,0,.5); }
 .stato { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--su-primario) 30%, transparent); }
 .stato::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #9aa39a; }
 .stato.aperto::before { background: #5fd38a; box-shadow: 0 0 0 3px rgba(95,211,138,.25); }
@@ -139,6 +139,7 @@ footer .firma a { color: var(--carta); }
 <main>
   <div class="hero">
     <div class="wrap">
+      <img class="logo-hero" src="ribalta-logo.png" alt="Logo di Ribalta Pizzeria e Bistrot">
       <p class="zona">Firenze · Rifredi</p>
       <h1>Ribalta Pizzeria e Bistrot</h1>
       <p class="sotto">Pizzeria e bistrot a Rifredi: pizza, cucina di pesce e dolci fatti in casa. Aperti tutte le sere tranne il lunedì.</p>

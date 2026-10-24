@@ -12,8 +12,8 @@ Campi facoltativi utili per le anteprime:
 - "prezzo" di un piatto: se manca, il piatto compare senza prezzo.
 - "solo_telefono": true quando il locale ha solo un numero fisso; il pulsante
   principale diventa "Chiama per prenotare" e sparisce WhatsApp.
-- "logo": percorso del file del logo (relativo al JSON); compare nella barra in alto
-  al posto del nome scritto.
+- "logo": percorso del file del logo (relativo al JSON); compare in alto nella
+  sezione principale, su un riquadro chiaro, sopra il nome del locale.
 """
 import html, json, os, shutil, sys, urllib.parse
 
@@ -159,10 +159,9 @@ def genera(d, out):
     robots = '<meta name="robots" content="noindex, nofollow">' if (demo or d.get("anteprima")) else '<meta name="robots" content="index, follow">'
     descrizione_meta = d.get("descrizione_meta", f'{d["nome"]} a {d["citta"]}: {d["sottotitolo"]}. Menu, orari e prenotazioni.')
     iniziale = d.get("iniziale", d["nome"].split()[-1][0])
-    if d.get("logo"):
-        marchio = f'<img class="logo" src="{E(os.path.basename(d["logo"]))}" alt="{E(d["nome"])}">'
-    else:
-        marchio = E(d["nome"])
+    marchio = E(d["nome"])
+    logo_hero = (f'<img class="logo-hero" src="{E(os.path.basename(d["logo"]))}" alt="Logo di {E(d["nome"])}">'
+                 if d.get("logo") else "")
 
     pagina = f'''<!doctype html>
 <html lang="it">
@@ -209,7 +208,7 @@ p {{ margin: 0; }}
 .testata {{ background: var(--primario); color: var(--su-primario); }}
 .testata .wrap {{ display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; }}
 .marchio {{ font: 400 1.15rem/1 var(--f-titoli); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }}
-.marchio .logo {{ height: 38px; width: auto; max-width: 160px; object-fit: contain; display: block; }}
+.logo-hero {{ width: clamp(110px, 28vw, 150px); height: auto; aspect-ratio: auto; background: #fff; padding: 10px; border-radius: 16px; box-shadow: 0 10px 24px -14px rgba(0,0,0,.5); }}
 .stato {{ white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--su-primario) 30%, transparent); }}
 .stato::before {{ content: ""; width: 8px; height: 8px; border-radius: 50%; background: #9aa39a; }}
 .stato.aperto::before {{ background: #5fd38a; box-shadow: 0 0 0 3px rgba(95,211,138,.25); }}
@@ -305,6 +304,7 @@ footer .firma a {{ color: var(--carta); }}
 <main>
   <div class="hero">
     <div class="wrap">
+      {logo_hero}
       <p class="zona">{E(d["zona"])}</p>
       <h1>{E(d["nome"])}</h1>
       <p class="sotto">{E(d["sottotitolo"])}</p>
