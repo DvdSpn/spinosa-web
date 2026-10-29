@@ -1,0 +1,122 @@
+{
+  "nome": "Evo Firenze",
+  "iniziale": "E",
+  "citta": "Firenze",
+  "zona": "Firenze · Piazza Dalmazia",
+  "sottotitolo": "Evoluzione Pizza: pizza al taglio con impasto lievitato 48 ore, tanti gusti in vetrina e pizze fatte al momento.",
+  "descrizione_meta": "Evo Firenze, Evoluzione Pizza in Piazza Dalmazia: pizza al taglio con impasto a lunga lievitazione. Orari e ordini su WhatsApp.",
+  "indirizzo": "Piazza Dalmazia 29r, 50141 Firenze",
+  "telefono": "375 675 5173",
+  "messaggio_whatsapp": "Ciao, vorrei ordinare della pizza da Evo",
+  "etichetta_whatsapp": "Ordina su WhatsApp",
+  "etichetta_breve": "Ordina",
+  "orari": {
+    "0": [],
+    "1": [],
+    "2": [],
+    "3": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "17:00",
+        "21:30"
+      ]
+    ],
+    "4": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "17:00",
+        "21:30"
+      ]
+    ],
+    "5": [
+      [
+        "12:00",
+        "15:00"
+      ],
+      [
+        "17:00",
+        "21:30"
+      ]
+    ],
+    "6": [
+      [
+        "17:00",
+        "21:30"
+      ]
+    ]
+  },
+  "colori": {
+    "carta": "#f5f4f1",
+    "inchiostro": "#1a1f24",
+    "primario": "#1f2d3a",
+    "su_primario": "#f3f1ec",
+    "accento": "#f26b3a",
+    "linea": "#dcd9d2",
+    "tenue": "#5b6168"
+  },
+  "titolo_menu": "Cosa trovi da Evo",
+  "menu": [
+    {
+      "nome": "Al taglio",
+      "piatti": [
+        {
+          "nome": "I gusti del giorno in vetrina",
+          "descrizione": "Pronti e scaldati al momento, da mangiare qui o da portare via."
+        },
+        {
+          "nome": "Pizze vegetariane",
+          "descrizione": "Sempre più di una scelta senza carne."
+        }
+      ]
+    },
+    {
+      "nome": "Le più amate",
+      "piatti": [
+        {
+          "nome": "Formaggio erborinato e confettura di fichi"
+        },
+        {
+          "nome": "Con formaggio affumicato",
+          "descrizione": "Il tocco che i clienti ricordano su alcuni gusti."
+        },
+        {
+          "nome": "Pizza fatta al momento",
+          "descrizione": "Scegli tu e la prepariamo mentre aspetti."
+        }
+      ]
+    },
+    {
+      "nome": "Da bere",
+      "piatti": [
+        {
+          "nome": "Birra artigianale",
+          "descrizione": "Prodotta con acqua di sorgente di montagna."
+        }
+      ]
+    }
+  ],
+  "note_menu": [
+    "Impasto a lunga lievitazione: 48 ore",
+    "Anteprima: qui trovi alcuni dei gusti più citati nelle recensioni",
+    "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
+  ],
+  "recensioni": {
+    "voto": "4,9",
+    "numero": "297",
+    "elenco": [],
+    "avviso": "Nel sito definitivo qui compaiono le vostre recensioni migliori, prese da Google."
+  },
+  "anteprima": true,
+  "demo": {
+    "testo": "Anteprima gratuita preparata da Spinosa Web per Evo Firenze · Evoluzione Pizza. Non è il sito ufficiale.",
+    "azione": "Ti piace? Scrivimi su WhatsApp",
+    "link": "https://wa.me/393668263645?text=Ciao%20Davide%2C%20ho%20visto%20l%27anteprima%20del%20sito%20per%20Evo"
+  },
+  "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/"
+}

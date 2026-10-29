@@ -124,5 +124,7 @@
     "Il menu completo con i prezzi si aggiunge con le informazioni del locale"
   ],
   "credito_link": "https://spinosa-web.2006spinosadavide.workers.dev/",
-  "logo": "acqua-e-farina-logo.png"
+  "logo": "acqua-e-farina-logo.png",
+  "etichetta_whatsapp": "Ordina su WhatsApp",
+  "etichetta_breve": "Ordina"
 }

@@ -12,6 +12,8 @@ Campi facoltativi utili per le anteprime:
 - "prezzo" di un piatto: se manca, il piatto compare senza prezzo.
 - "solo_telefono": true quando il locale ha solo un numero fisso; il pulsante
   principale diventa "Chiama per prenotare" e sparisce WhatsApp.
+- "etichetta_whatsapp" / "etichetta_breve": testo dei pulsanti WhatsApp (di base
+  "Prenota su WhatsApp" e "Prenota"); per pizzerie e asporto usa "Ordina su WhatsApp" e "Ordina".
 - "logo": percorso del file del logo (relativo al JSON); compare in alto nella
   sezione principale, su un riquadro chiaro, sopra il nome del locale.
 """
@@ -67,6 +69,8 @@ def genera(d, out):
     if d.get("maps_link"): maps_link = d["maps_link"]
     demo = d.get("demo")
     solo_tel = bool(d.get("solo_telefono"))
+    et_wa = d.get("etichetta_whatsapp", "Prenota su WhatsApp")
+    et_breve = d.get("etichetta_breve", "Prenota")
 
     # Pulsanti: WhatsApp quando c'e' un cellulare, altrimenti la chiamata
     if solo_tel:
@@ -76,11 +80,11 @@ def genera(d, out):
                       f'<a class="princ" href="{E(tel_link)}">{icona("tel")}Prenota</a>'
                       f'<a href="{E(maps_link)}" target="_blank" rel="noopener">{icona("map")}Mappa</a>')
     else:
-        azioni_hero = (f'<a class="btn btn-acc" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}Prenota su WhatsApp</a>'
+        azioni_hero = (f'<a class="btn btn-acc" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}{E(et_wa)}</a>'
                        f'<a class="btn btn-bordo" href="{E(tel_link)}">{icona("tel")}Chiama</a>'
                        f'<a class="btn btn-bordo" href="#menu">Vedi il menu</a>')
         barra_html = (f'<a href="{E(tel_link)}">{icona("tel")}Chiama</a>'
-                      f'<a class="princ" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}Prenota</a>'
+                      f'<a class="princ" href="{E(wa_link)}" target="_blank" rel="noopener">{icona("wa")}{E(et_breve)}</a>'
                       f'<a href="{E(maps_link)}" target="_blank" rel="noopener">{icona("map")}Mappa</a>')
 
     # Lavagna dei piatti del giorno
